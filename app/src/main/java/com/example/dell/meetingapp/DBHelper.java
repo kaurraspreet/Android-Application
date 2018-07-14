@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 import java.util.IdentityHashMap;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -54,7 +55,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //add data into database
     public void addMeeting(meeting mett) {
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(MEETING_TOPIC, mett.getTopic());
         cv.put(MEETING_DURATION, mett.getDuration());
@@ -80,10 +81,39 @@ public class DBHelper extends SQLiteOpenHelper {
         String str= ("SELECT * FROM TABLE_NAME");
         return db.rawQuery(str,null);
     }
-    public void deleteTask(String s1){
-        SQLiteDatabase db=this.getWritableDatabase();
-       // db.execSQL("DELETE FROM +"TABLE_NAME + "WHERE" +);
-        db.close();
-    }
+//    public void deleteTask(String s1){
+//        SQLiteDatabase db=this.getWritableDatabase();
+//        db.execSQL(" DELETE FROM " + TABLE_NAME + " WHERE " + KEY_ID + " = " +  id  + " ");
+//        db.close();
+//    }
+
+
+//    public ArrayList<meeting> getAllNotes() {
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        ArrayList<meeting> listItems = new ArrayList<meeting>();
+//
+//        Cursor cursor = db.rawQuery("SELECT * from " + TABLE_NAME,
+//                new String[] {});
+//
+//        if (cursor.moveToFirst()) {
+//            do {
+//                meeting note = new meeting();
+//
+//               // note.Id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
+//
+//                note.topic = cursor.getString(cursor.getColumnIndex(TABLE_NAME));
+//                note.duration = cursor.getString(cursor.getColumnIndex(MEETING_DURATION));
+//                note.time = cursor.getString(cursor.getColumnIndex(MEETING_TIME));
+//                note.date = cursor.getString(cursor.getColumnIndex(MEETING_DATE));
+//
+//                listItems.add(note);
+//            } while (cursor.moveToNext());
+//        }
+//
+//        cursor.close();
+//
+//        return listItems;
+//    }
+
 
 }

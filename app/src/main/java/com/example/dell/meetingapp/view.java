@@ -27,16 +27,16 @@ public class view extends AppCompatActivity {
         viewDate= findViewById(R.id.tv3);
         viewTime= findViewById(R.id.tv4);
 
-        listView = findViewById(R.id.add);
-                ArrayList<meeting> arrayList = new ArrayList<>();
-                //arrayList.add(new meeting(id));
-               arrayList.add(new meeting(topic));
-               arrayList.add(new meeting(duration));
-                arrayList.add(new meeting(date));
-                arrayList.add(new meeting(time));
-
-                mAdapter = new MeetingAdapter(this,arrayList);
-                listView.setAdapter(mAdapter);
+//        listView = findViewById(R.id.add);
+//                ArrayList<meeting> arrayList = new ArrayList<>();
+//               // arrayList.add(new meeting(id));
+//               arrayList.add(new meeting(topic));
+//               arrayList.add(new meeting(duration));
+//                arrayList.add(new meeting(date));
+//                arrayList.add(new meeting(time));
+//
+//                mAdapter = new MeetingAdapter(this,arrayList);
+//                listView.setAdapter(mAdapter);
 
             }
         }
